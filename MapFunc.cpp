@@ -1,3 +1,5 @@
+#include "MapFunc.h"
+
 template<class T>
 void printmapT(const T &m)
 {
@@ -7,4 +9,4 @@ void printmapT(const T &m)
         // iterator->second = nummer
         cout << "Name: " << it->first << " - Nummer: " << it->second << endl;
     } 
-}
+};

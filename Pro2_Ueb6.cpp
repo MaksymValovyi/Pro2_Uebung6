@@ -1,5 +1,5 @@
 #include "VektorFunc.cpp"
-#include "MapFunc.cpp"
+#include "MapFunc.h"
 
 #include <iostream>
 #include <time.h>
@@ -49,16 +49,34 @@ void call_Auf2_2(){
         telefonbuch.insert(pair<string, string>("Schulz", "0385 / 744123"));
         telefonbuch.insert(pair<string, string>("Meyer", "0448 / 56687"));
         telefonbuch.insert(pair<string, string>("Meier", "03841 / 154100"));
-        multimap<string, string> telefonbuch;
-        telefonbuch.insert(pair<string, string>("Muster", "03841 / 155500"));
-        telefonbuch.insert(pair<string, string>("Krumm", "0441 / 12345"));
-        telefonbuch.insert(pair<string, string>("Schulz", "0385 / 744123"));
-        telefonbuch.insert(pair<string, string>("Schulz", "0171/ 123456"));
-        telefonbuch.insert(pair<string, string>("Schulz", "0391 / 32356"));
-        telefonbuch.insert(pair<string, string>("Meyer", "0448 / 56687"));
-        telefonbuch.insert(pair<string, string>("Meier", "03841 / 154100"));
 
         printmapT(telefonbuch);
+
+        string person = "";
+        cout << "Bitte geben Sie den Namen ein: " << endl;
+        cin >> person;
+        
+        searchPhoneNumberT(telefonbuch, person);
+
+        person.clear();
+
+        multimap<string, string> telefonbuch1;
+        telefonbuch1.insert(pair<string, string>("Muster", "03841 / 155500"));
+        telefonbuch1.insert(pair<string, string>("Krumm", "0441 / 12345"));
+        telefonbuch1.insert(pair<string, string>("Schulz", "0385 / 744123"));
+        telefonbuch1.insert(pair<string, string>("Schulz", "0171/ 123456"));
+        telefonbuch1.insert(pair<string, string>("Schulz", "0391 / 32356"));
+        telefonbuch1.insert(pair<string, string>("Meyer", "0448 / 56687"));
+        telefonbuch1.insert(pair<string, string>("Meier", "03841 / 154100"));
+
+        printmapT(telefonbuch1);
+
+        cout << "Bitte geben Sie den Namen ein: " << endl;
+        cin >> person;
+
+        searchPhoneNumberT(telefonbuch1, person);
+
+        person.clear();
 }
 
 int main(int argc, char const *argv[])
@@ -79,6 +97,7 @@ int main(int argc, char const *argv[])
             break;
         case '2':
             cout << "Aufgabe 2" << endl;
+            call_Auf2_2();
             break;
         case 'e':
             cout << "Beenden" << endl;
